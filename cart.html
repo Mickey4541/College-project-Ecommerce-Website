@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Centering table and header */
+    h2 {
+      text-align: center;
+    }
+
+    /* Styling table */
+    table {
+      width: 60vw;
+      /* Adjusted width for smaller screens */
+      margin: 0 auto;
+      /* Centering the table */
+      border-collapse: collapse;
+      border-radius: 10px;
+    }
+
+    table,
+    th,
+    td {
+      border: 3px solid #fff;
+      padding: 8px;
+      text-align: center;
+      background-color: #d3cfcf;
+      color: #000;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+
+    th {
+      background-color: #ff004f;
+      font-weight: bold;
+      /* Making header bold */
+    }
+
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+
+    /* Centering checkout button */
+    button {
+      display: block;
+      /* margin: 20px auto; */
+      background-color: green;
+      padding: 5px;
+      border-radius: 10px;
+      color: #fff;
+      border: 1px solid white;
+      /* Centering the button */
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #106110;
+    }
+
+    .checkout {
+      background-color: rgb(6, 248, 6);
+      padding: 10px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #000;
+      border: 1px solid #000;
+      margin: auto;
+      margin-top: 10px;
+    }
+
+    .checkout:hover {
+      background-color: green;
+      color: #fff;
+    }
+
+    .total {
+      font-weight: 800;
+      color: rgb(0, 0, 0);
+      border-top: 1px solid #fff;
+    }
+
+    #total {
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    input {
+      border-radius: 10PX;
+      text-align: center;
+      padding: 5PX;
+      font-weight: 600;
+    }
+    @media (max-width: 577px) {
+      th, td {
+        font-size: 12px; /* Added */
+        padding: 4px; /* Added */
+      }
+
+      img {
+        max-width: 50px; /* Added */
+        max-height: 50px; /* Added */
+      }
+
+      button {
+        padding: 3px; /* Added */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <a href="#"><img src="./img/REC BCA IV.png" class="logo" alt=""></a>
+
+    <div>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="lg-bag"><a href="cart.html" class="active"><i class="fa-solid fa-cart-shopping"><sup>0</sup></i></a>
+        </li>
+        <a href="#" id="close"><i class="fa-regular fa-circle-xmark"></i></a>
+      </ul>
+    </div>
+    <div id="mobile">
+      <i id="bar" class="fas fa-outdent"></i>
+      <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <h2>Your Cart Products:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>SN</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="total" colspan="3">Total</td>
+        <td id="total">$0.00</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+  <button onclick="checkout()" class="checkout">Checkout</button>
+
+
+
+
+
+  <!-- ...........................newsletter section............................... -->
+  <section id="newsletter" class="section-padding section-margin">
+    <div class="news-text">
+      <h4>Sign up for Newsletter</h4>
+      <p>Get Email updates about our latest shop and <span>Special Offers.</span></p>
+    </div>
+    <div class="form">
+      <input type="text" placeholder="Your Email Address">
+      <button class="normal">Sign Up</button>
+    </div>
+  </section>
+
+  <!-- ...........................................footer............................... -->
+  <footer class="section-padding">
+    <div class="column">
+      <img class="logo" src="./img/REC BCA IV.png" alt="">
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Ghorahi-16 Saniambapur Sarra-Dang, Nepal</p>
+      <p><strong>Phone:</strong> 98********</p>
+      <p><strong>Opening Hours:</strong> All Week 24/7</p>
+      <div class="follow">
+        <h4>Follow US</h4>
+        <div class="icon">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-youtube"></i>
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <h4>About</h4>
+      <a href="#">About US</a>
+      <a href="#">Delivery Information</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">terms and Conditions</a>
+      <a href="#">contact Us</a>
+    </div>
+
+    <div class="column">
+      <h4>My Account</h4>
+      <a href="#">Sign In</a>
+      <a href="#">View Cart</a>
+      <a href="#">My WishList</a>
+      <a href="#">Track my Order</a>
+      <a href="#">Help</a>
+    </div>
+    <div class="column install">
+      <h4>Install App</h4>
+      <p>From App Store or Google Store</p>
+      <div class="row">
+        <img src="./img/pay/app.jpg" alt="">
+        <img src="./img/pay/play.jpg" alt="">
+      </div>
+      <p>Secure Payment Gateway</p>
+      <img src="./img/pay/pay.png" alt="">
+    </div>
+    <div class="copyright">
+      <p>© 2024, Made with Love ❤️ || All Rights Reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Scripts -->
+  <script>
+    function renderCart() {
+      const cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+
+      let total = 0;
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      cart.forEach((product, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>
+                    <img src="${product.image}" alt="${product.name}">
+                    ${product.name}
+                </td>
+                <td>
+                    <input type="number" min="1" value="${product.quantity}" onchange="updateQuantity(${index}, this.value)">
+                </td>
+                <td>$${(product.price * product.quantity).toFixed(2)}</td>
+                <td><button onclick="removeItem(${index})">Remove</button></td>
+            `;
+        cartItems.appendChild(row);
+        total += product.price * product.quantity;
+      });
+
+      document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    function checkout() {
+      // Alert message for successful checkout
+      alert('Successfully checked out!');
+
+      // Clear the cart
+      localStorage.removeItem('cart');
+
+      // Update the cart counter
+      const cartCounter = document.querySelector('#lg-bag sup');
+      cartCounter.textContent = '0';
+
+      // Re-render the cart to show the changes
+      renderCart();
+    }
+
+
+    function updateQuantity(index, quantity) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart[index].quantity = parseInt(quantity);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    // Initial rendering
+    renderCart();
+  </script>
+</body>
+
+</html>
